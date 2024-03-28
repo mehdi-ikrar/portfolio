@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:white;
+    overflow-x: hidden; /* Pour éviter la barre de défilement horizontale ss*/
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(7, 79, 160, 0); /* Couleur de fond transparente */
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+header.scrolled-0 {
+    background-color: rgba(3, 34, 76, 0); /* Opacité 0 */
+}
+
+header.scrolled-33 {
+    background-color: rgba(3, 34, 76, 0.33); /* Opacité 50% */
+}
+
+header.scrolled-66 {
+    background-color: rgba(3, 34, 76, 0.66); /* Opacité 100% */
+}
+
+header.scrolled-99 {
+    background-color: rgba(3, 34, 76, 0.9); /* Opacité 100% */
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Centrer verticalement */
+    text-align: center; /* Centrer horizontalement */
+    
+    img {
+        width: 10%;
+
+        
+    }
+
+    #title-container { /* Nouveau conteneur pour le titre */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centrer horizontalement */
+
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 80px;
+    }
+}
+
+#index {
+    list-style: none;
+    display: flex;
+    li {
+        margin: 0 10px;
+        
+        a {
+            color: #ffffff; /* Correction : Commence par un dièse (#) */
+            text-decoration: none;
+            font-weight: bold;
+        
+            &:visited { /* Utilisation de l'opérateur & pour sélectionner les liens visités */
+                color: #ffffff; /* Couleur blanche pour les liens visités */
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+
+
+//-------------description--------//
+
+
+#project-description {
+    background-image: url('../images/developeur.jpg');
+    background-position: center;
+    height: 750px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 640px;
+    
+    h2 {
+        font-size: 80px;
+        
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    p {
+        font-size: 15px;
+        color: white;
+    }
+}
+.active {
+    background-color: #333;
+}
+
+
+
+//-----cv--------//
+
+.competences{
+    display: flex;
+    justify-content: column;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+.cv_img{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    width: 10%;
+    img{
+        max-width: 100%;
+    }
+}
+.competences_liste{
+    list-style-type: none;
+    text-align: center;
+}
+#cv{
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    h2{
+        display: flex;
+        justify-content: center;
+    }
+
+
+
+
+}
+
+
+
+
+//----------portfolio-----------//
+
+#portfolio{
+    background-color: #abcdef;
+    padding: 50px;
+    
+}
+.site {
+    
+    max-width: 60%;
+    margin: 0 auto;
+    overflow: hidden; /* Cacher le débordement pour que seules les images visibles soient affichées */
+    position: relative;
+
+    img {
+        width: 450px; /* Utiliser la largeur maximale disponible pour les images */
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        margin: 20px;
+
+    }
+}
+
+#title_portfolio{
+    display: flex;
+    justify-content: center;
+}
+.carousel {
+    display: flex; /* Afficher les éléments en ligne */
+    transition: transform 0.3s ease; /* Animation de transition fluide */
+    
+}
+figcaption{
+    display: flex;
+    align-items: center; /* Centre le contenu verticalement */
+    justify-content: center; /* Centre le contenu horizontalement */
+    font-weight: bold;
+
+}
+.carousel-inner {
+    display: flex;
+    
+}
+
+.carousel-item {
+    flex: 0 0 auto; /* Ne pas étirer les images */
+}
+
+.indicators {
+    display: flex;
+    justify-content: center; /* Centrer les indicateurs horizontalement */
+    margin-top: 10px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: #333; /* Couleur de fond active pour l'indicateur */
+}
+
+.competences img:hover {
+    transform: scale(1.1);
+}
+.site img:hover {
+    transform: scale(1.1);
+}
+#contact {
+    text-align: center;
+    margin-bottom: 20px;
+}
+#contact-form {
+
+
+    padding: 20px;
+    background-image: url('../images/bureau.jpg');
+    background-position: center calc(0px - 950px); /* Déplacer l'image de 10 pixels vers le haut */
+    background-size: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+form{
+    max-width: 600px;
+    margin: auto;
+    border: 1px solid black; /* Couleur et épaisseur de la bordure */
+    padding: 5px; /* Espace à l'intérieur de la bordure */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#contact-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    height: 150px;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+}
