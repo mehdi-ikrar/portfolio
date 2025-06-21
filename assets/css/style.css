@@ -551,7 +551,7 @@ body.dark-mode .header {
     display: flex;
     align-items: center;
     gap: 1rem;
-    z-index: 2;
+
 }
 
 .floating-card i {
@@ -567,17 +567,44 @@ body.dark-mode .header {
     top: 20%;
     left: -20px;
     animation: float 3s ease-in-out infinite;
+    z-index: 1;
 }
 
 .floating-card.card-2 {
     bottom: 20%;
     right: -20px;
     animation: float 4s ease-in-out infinite reverse;
+    
+}
+
+.floating-card.card-3 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: floatCenter 3.5s ease-in-out infinite;
+
+   
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    0%, 100% { 
+        transform: translateY(0); 
+    }
+    50% { 
+        transform: translateY(-10px); 
+    }
+}
+
+/* Animation spéciale pour card-3 centrée */
+
+
+@keyframes floatCenter {
+    0%, 100% { 
+        transform: translate(-50%, -50%) translateY(0); 
+    }
+    50% { 
+        transform: translate(-50%, -50%) translateY(-10px); 
+    }
 }
 
 .blob {
@@ -1314,6 +1341,13 @@ body.dark-mode .footer .social-links a {
 }
 
 @media (max-width: 768px) {
+    /* Désactiver toutes les animations AOS sur mobile */
+    [data-aos] {
+        transform: none !important;
+        opacity: 1 !important;
+        transition: none !important;
+    }
+    
     .hamburger {
         display: block;
     }
