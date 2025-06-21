@@ -38,17 +38,6 @@
     </style>
 </head>
 <body class="light-mode">
-    <!-- Loader -->
-    <div class="loader">
-        <div class="spinner">
-            <span class="circle circle-1"></span>
-            <span class="circle circle-2"></span>
-            <span class="circle circle-3"></span>
-            <span class="circle circle-4"></span>
-        </div>
-        <span class="loading-text">Chargement</span>
-    </div>
-
     <!-- Header avec navigation -->
     <header class="header">
         <div class="container">
@@ -601,14 +590,6 @@
             duration: 800,
             easing: 'ease-in-out',
             once: true
-        });
-
-        // Gestion du chargement de la page
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.querySelector('.loader').classList.add('hidden');
-                document.body.classList.add('loaded');
-            }, 1000);
         });
 
         // Toggle mode sombre/clair
