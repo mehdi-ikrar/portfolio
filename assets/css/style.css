@@ -657,13 +657,14 @@ body.dark-mode .header {
     background: var(--gradient);
     color: #fff;
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     box-shadow: var(--shadow-md);
+    padding: 3.5rem;
 }
 
 .experience-badge .years {
