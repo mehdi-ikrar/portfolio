@@ -23,7 +23,16 @@
     --font-family-heading: 'Space Grotesk', sans-serif;
     --nav-height: 80px;
 }
-
+::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 5px;
+        }
 /* Mode sombre */
 body.dark-mode {
     --text-color: #f8f9fa;
