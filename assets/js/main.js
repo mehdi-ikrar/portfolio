@@ -38,10 +38,13 @@ AOS.init({
 });
 
 // Toggle mode sombre/clair
-document.getElementById('theme-toggle').addEventListener('click', function () {
-    document.body.classList.toggle('dark-mode');
+const themeToggleButton = document.getElementById('theme-toggle');
 
-    const icon = this.querySelector('i');
+const updateThemeIcon = () => {
+    if (!themeToggleButton) return;
+
+    const icon = themeToggleButton.querySelector('i');
+    if (!icon) return;
 
     if (document.body.classList.contains('dark-mode')) {
         icon.classList.remove('fa-moon');
@@ -50,7 +53,16 @@ document.getElementById('theme-toggle').addEventListener('click', function () {
         icon.classList.remove('fa-sun');
         icon.classList.add('fa-moon');
     }
-});
+};
+
+updateThemeIcon();
+
+if (themeToggleButton) {
+    themeToggleButton.addEventListener('click', function () {
+        document.body.classList.toggle('dark-mode');
+        updateThemeIcon();
+    });
+}
 
 // Menu mobile
 document.getElementById('menu-toggle').addEventListener('click', function () {
