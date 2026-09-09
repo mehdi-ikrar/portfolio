@@ -124,6 +124,22 @@ document.querySelectorAll('.filter-btn').forEach(button => {
 
 });
 
+// Rend toute la carte projet cliquable vers le lien "Voir le projet"
+document.querySelectorAll('.project-card').forEach(card => {
+
+    const mainLink = card.querySelector('.project-links .btn-sm');
+    if (!mainLink) return;
+
+    card.style.cursor = 'pointer';
+
+    card.addEventListener('click', (e) => {
+        // Ne pas rediriger si on clique sur un lien (déjà géré par le lien lui-même)
+        if (e.target.closest('a')) return;
+        window.open(mainLink.href, '_blank', 'noopener,noreferrer');
+    });
+
+});
+
 // Gestion formulaire Formspree
 const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('form-success');
