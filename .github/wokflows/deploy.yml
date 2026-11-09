@@ -1,0 +1,19 @@
+
+name: Déploiement automatique
+
+on:
+  push:
+    branches: [ master ] 
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: 🚀 Publier sur GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: . # Le point indique qu'on publie tous les fichiers
